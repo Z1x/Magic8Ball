@@ -1,0 +1,163 @@
+<html>
+<head>
+    <style type="text/css">
+        .circleBase {
+    border-radius: 50%;
+}
+
+.circle {
+    width: 670px;
+    height: 670px;
+    background: black;
+    border: 0px solid black;
+    color:white;
+    text-align: center;
+    margin: auto;
+}
+#textline {
+    border: 2px solid gray;
+    background: aqua;
+    height: 50px;
+    width: 400px;
+    margin: auto;
+    font-size: 30px;
+    color: black;
+}
+.userinput {
+    margin: auto;
+    text-align: center;
+}
+.userinput2 {
+    width: 250px;
+    height: 30px;
+    margin-top: 25px;
+    border: 2px solid black;
+}
+#button {
+    text-align: center;
+}
+body {
+    background-image: url("file:///C:/Users/Hezz/Desktop/galaxy-wallpaper-36.jpg");
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+    <form class="userinput">
+        <input class="userinput2"; id="userquestion" name = "question"; type="text"; title="More than 5 letters and a question mark required" placeholder="Type your question here...">
+    </form>
+    <br>
+    <div id="button">
+        <button style="text-align:center; display:inline-block;" onclick="answer()">Shake</button>
+    </div>
+    <br>
+    <br>
+<div class="circleBase circle">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="textline"></div>
+
+    <div style="font-size: 400px;">8</div>
+
+</div>
+
+<script type="text/javascript">
+
+    function answer() {
+        textline.innerHTML = " "
+        var inputting = document.getElementById('userquestion').value;
+        var randomanswer = Math.floor(Math.random() * 20) + 1;
+        if (inputting.indexOf('?') > -1 && inputting.length > 5) {
+            if (inputting.indexOf('how long') > -1 || inputting.indexOf('how much time') > -1 || inputting.indexOf('How long') > -1 || inputting.indexOf('How much time') > -1  ) {
+                randomanswer = Math.floor(Math.random() * 5) + 1;
+
+                if (randomanswer == 1) {
+                    textline.innerHTML = "Soon";
+                }else if (randomanswer == 2) {
+                    textline.innerHTML = "Never";
+                }else if (randomanswer == 3) {
+                    textline.innerHTML = "Only time knows";
+                }else if (randomanswer == 4) {
+                    textline.innerHTML = "In time";
+                }else if (randomanswer == 5) {
+                    textline.innerHTML = "Later";
+                }
+            }else {
+
+                if (inputting.indexOf('how much') > -1 || inputting.indexOf('How much') > -1 ) {
+                randomanswer = Math.floor(Math.random() * 2) + 1;
+
+                if (randomanswer == 1) {
+                    textline.innerHTML = "Depends";
+                }else if (randomanswer == 2) {
+                    textline.innerHTML = "5$";
+                }
+            }else {
+                    if (randomanswer == 1) {
+                        textline.innerHTML = "It is certain";
+                    }else if(randomanswer == 2) {
+                        textline.innerHTML = "It is decidedly so";
+                    }else if(randomanswer == 3) {
+                        textline.innerHTML = "Without a doubt";
+                    }else if(randomanswer == 4) {
+                        textline.innerHTML = "Yes, definitely";
+                    }else if(randomanswer == 5) {
+                        textline.innerHTML = "You may rely on it";
+                    }else if(randomanswer == 6) {
+                        textline.innerHTML = "As I see it, yes";
+                    }else if(randomanswer == 7) {
+                        textline.innerHTML = "Most likely";
+                    }else if(randomanswer == 8) {
+                        textline.innerHTML = "Outlook good";
+                    }else if(randomanswer == 9) {
+                        textline.innerHTML = "Yes";
+                    }else if(randomanswer == 10) {
+                        textline.innerHTML = "Signs point to yes";
+                    }else if(randomanswer == 11) {
+                        textline.innerHTML = "Reply hazy try again";
+                    }else if(randomanswer == 12) {
+                        textline.innerHTML = " Ask again later";
+                    }else if(randomanswer == 13) {
+                        textline.innerHTML = "Better not tell you now";
+                    }else if(randomanswer == 14) {
+                        textline.innerHTML = "Cannot predict now";
+                    }else if(randomanswer == 15) {
+                        textline.innerHTML = "Concentrate and ask again";
+                    }else if(randomanswer == 16) {
+                        textline.innerHTML = "Don't count on it";
+                    }else if(randomanswer == 17) {
+                        textline.innerHTML = "My reply is no";
+                    }else if(randomanswer == 18) {
+                        textline.innerHTML = "My sources say no";
+                    }else if(randomanswer == 19) {
+                        textline.innerHTML = "Outlook not so good";
+                    }else if(randomanswer == 20) {
+                        textline.innerHTML = "Very doubtful";
+                    };
+                };
+            };
+        }else {
+            textline.innerHTML = "Try Again";
+        }
+    };
+    function defer(method) {
+    if (window.jQuery)
+        method();
+    else
+        setTimeout(function() { defer(method) }, 50);
+}
+
+   $(document).ready(function() {
+
+            $("#button").click(function(){
+               $(".type3").effect ( "shake", {times:4}, 1000 );
+            });
+                
+         });
+</script>
+</body>
+</html>
